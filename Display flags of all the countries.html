@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //XMLHTTP request
+        //creating a XHR object
+
+        var request=new XMLHttpRequest()
+
+        //open a connection
+        request.open('GET','https://restcountries.com/v3.1/all')
+
+        //sending a connection
+        request.send()
+
+        //onload event
+        request.onload=function(){
+
+            var data=JSON.parse(request.response)
+            for(var i=0;i<data.length;i++){
+            console.log(data[i].flag)
+            }
+        }
+    </script>
+</body>
+</html>
+
+
